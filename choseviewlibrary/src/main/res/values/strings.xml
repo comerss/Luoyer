@@ -1,0 +1,112 @@
+<resources>
+
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+
+    <!--就诊时间段-->
+    <string-array name="times">
+        <item>00:00</item>
+        <item>00:30</item>
+        <item>01:00</item>
+        <item>01:30</item>
+        <item>02:00</item>
+        <item>02:30</item>
+        <item>03:00</item>
+        <item>03:30</item>
+        <item>04:00</item>
+        <item>04:30</item>
+        <item>05:00</item>
+        <item>05:30</item>
+        <item>6:00</item>
+        <item>6:30</item>
+        <item>7:00</item>
+        <item>7:30</item>
+        <item>8:00</item>
+        <item>8:30</item>
+        <item>9:00</item>
+        <item>9:30</item>
+        <item>10:00</item>
+        <item>10:30</item>
+        <item>11:00</item>
+        <item>11:30</item>
+        <item>12:00</item>
+        <item>12:30</item>
+        <item>13:00</item>
+        <item>13:30</item>
+        <item>14:00</item>
+        <item>14:30</item>
+        <item>15:00</item>
+        <item>15:30</item>
+        <item>16:00</item>
+        <item>16:30</item>
+        <item>17:00</item>
+        <item>17:30</item>
+        <item>18:00</item>
+        <item>18:30</item>
+        <item>19:00</item>
+        <item>19:30</item>
+        <item>20:00</item>
+        <item>20:30</item>
+        <item>21:00</item>
+        <item>21:30</item>
+        <item>22:00</item>
+        <item>22:30</item>
+        <item>23:00</item>
+        <item>23:30</item>
+    </string-array>
+    <string-array name="visit_time_need">
+        <item>30分钟</item>
+        <item>1小时</item>
+        <item>1小时30分钟</item>
+        <item>2小时</item>
+        <item>2小时30分钟</item>
+        <item>3小时</item>
+        <item>3小时30分钟</item>
+        <item>4小时</item>
+        <item>4小时30分钟</item>
+        <item>5小时</item>
+        <item>5小时30分钟</item>
+        <item>6小时</item>
+        <item>6小时30分钟</item>
+        <item>7小时</item>
+        <item>7小时30分钟</item>
+        <item>8小时</item>
+        <item>8小时30分钟</item>
+        <item>9小时</item>
+        <item>10小时</item>
+        <item>10小时30分钟</item>
+        <item>11小时</item>
+        <item>11小时30分钟</item>
+        <item>12小时</item>
+        <item>12小时30分钟</item>
+        <item>13小时</item>
+        <item>13小时30分钟</item>
+        <item>14小时</item>
+        <item>14小时30分钟</item>
+        <item>15小时</item>
+        <item>15小时30分钟</item>
+        <item>16小时</item>
+        <item>16小时30分钟</item>
+        <item>17小时</item>
+        <item>17小时30分钟</item>
+        <item>18小时</item>
+        <item>18小时30分钟</item>
+        <item>19小时</item>
+        <item>19小时30分钟</item>
+        <item>20小时</item>
+        <item>20小时30分钟</item>
+        <item>21小时</item>
+        <item>21小时30分钟</item>
+        <item>22小时</item>
+        <item>22小时30分钟</item>
+        <item>23小时</item>
+        <item>23小时30分钟</item>
+        <item>24小时</item>
+    </string-array>
+</resources>

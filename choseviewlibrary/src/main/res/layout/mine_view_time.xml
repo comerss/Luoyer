@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txCancle"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginLeft="19dp"
+            android:text="取消"
+            android:gravity="center"
+            android:textColor="@color/color_lable"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="选择自定义时间段"
+            android:textColor="@color/color_editText"
+            android:textSize="16sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/txCancle"
+            android:background="@color/color_middle_line"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="19dp"
+            android:text="开始时间"
+            android:gravity="center"
+            android:textColor="@color/color_textView"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/txStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="113dp"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/color_lable"
+            android:textSize="50px"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/txStartTime"
+            android:layout_marginLeft="47px"
+            android:background="@color/color_middle_line"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="19dp"
+            android:text="结束时间"
+            android:textColor="@color/color_textView"
+            android:gravity="center"
+            android:textSize="16dp"
+            />
+
+        <TextView
+            android:id="@+id/txEndTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="113dp"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/color_editText"
+            android:textSize="17dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/txEndTime"
+            android:layout_marginLeft="47px"
+            android:background="@color/color_middle_line"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="153dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/cancle_bg"
+            android:text="清除"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="155dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="19dp"
+            android:layout_toRightOf="@+id/btnClear"
+            android:background="@drawable/search_bg"
+            android:text="搜索"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/btnClear"
+            android:background="@color/color_middle_line"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#f4f7fd"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#cfd4db"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/timepicker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <com.qiezzi.choseviewlibrary.lib.WheelView
+                android:id="@+id/year"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <com.qiezzi.choseviewlibrary.lib.WheelView
+                android:id="@+id/month"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"/>
+
+            <com.qiezzi.choseviewlibrary.lib.WheelView
+                android:id="@+id/day"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"/>
+
+            <com.qiezzi.choseviewlibrary.lib.WheelView
+                android:id="@+id/hour"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"/>
+
+            <com.qiezzi.choseviewlibrary.lib.WheelView
+                android:id="@+id/min"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"/>
+            <com.qiezzi.choseviewlibrary.lib.WheelView
+                android:id="@+id/cMin"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"/>
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

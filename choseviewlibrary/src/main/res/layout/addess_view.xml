@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#fff"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="@dimen/pickerview_topbar_paddingleft"
+            android:paddingRight="@dimen/pickerview_topbar_paddingright"
+            android:text="@string/pickerview_cancel"
+            android:textColor="@drawable/selector_pickerview_btn"
+            android:textSize="@dimen/pickerview_topbar_btn_textsize"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btnSubmit"
+            android:layout_toRightOf="@+id/btnCancel"
+            android:gravity="center"
+            android:textColor="@color/color_textView"
+            android:textSize="@dimen/pickerview_topbar_title_textsize"/>
+
+        <Button
+            android:id="@id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="@dimen/pickerview_topbar_paddingright"
+            android:paddingRight="@dimen/pickerview_topbar_paddingleft"
+            android:text="@string/pickerview_submit"
+            android:textColor="@drawable/selector_pickerview_btn"
+            android:textSize="@dimen/pickerview_topbar_btn_textsize"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#cfd4db"/>
+
+    <LinearLayout
+        android:id="@+id/optionspicker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.qiezzi.choseviewlibrary.lib.AddressView
+            android:id="@+id/options1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+        <com.qiezzi.choseviewlibrary.lib.AddressView
+            android:id="@+id/options2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <com.qiezzi.choseviewlibrary.lib.AddressView
+            android:id="@+id/options3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+</LinearLayout>
