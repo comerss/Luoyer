@@ -1,0 +1,22 @@
+<resources>
+    <declare-styleable name="MyView">
+        <attr name="exampleString" format="string" />
+        <attr name="exampleDimension" format="dimension" />
+        <attr name="exampleColor" format="color" />
+        <attr name="exampleDrawable" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="LineTextView">
+        <attr name="hasLine" format="boolean" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="lineColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="RotateTextview">
+        <attr name="Degree" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="ProgressBar">
+        <attr name="textSize" format="dimension"/>
+        <attr name="TopHeight" format="dimension"/>
+        <attr name="CanOpen" format="boolean"/>
+    </declare-styleable>
+</resources>

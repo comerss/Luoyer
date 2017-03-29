@@ -1,4 +1,4 @@
-package hiemat.com.luoyer;
+package heimat.com.luoyer;
 
 import android.content.Context;
 
@@ -11,7 +11,10 @@ import java.util.List;
  * Created by code5 on 2017/3/22.
  */
 public class MainAdapter extends BaseQuickAdapter {
-    int[] images=new int[]{R.drawable.a6k,R.drawable.a4r,R.drawable.af8,R.drawable.a8_,R.drawable.a8a,R.drawable.a8c};
+    int[] images=new int[]{R.drawable.a6k,R.drawable.a4r,
+            R.drawable.af8,R.drawable.a8_,
+            R.drawable.a8a,R.drawable.a8c};
+
     private Context mContext;
     public MainAdapter(List data) {
         super(R.layout.adapter_main,data);

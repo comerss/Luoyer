@@ -1,6 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="pickerview_timebtn_nor">#3284ff</color>
+    <color name="pickerview_timebtn_pre">#c2daf5</color>
+    <color name="pickerview_bg_topbar">#f5f5f5</color>
+    <color name="pickerview_topbar_title">#000000</color>
+    <color name="pickerview_wheelview_textcolor_out">#a8a8a8</color>
+    <color name="pickerview_wheelview_textcolor_center">#2a2a2a</color>
+    <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
+    <!--覆盖颜色-->
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="bgColor_overlay2">#00000000</color>
+
+
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- <color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#3284ff</color>
+    <color name="black">#000</color>
+    <!--新建预约用到的颜色-->
+    <color name="color_statusBar">#7E7AC5</color>
+    <color name="color_title_text">#ffffff</color>
+    <color name="color_textView">#758397</color>
+    <color name="color_lable">#3284FF</color>
+    <color name="color_editText">#3c444f</color>
+    <color name="color_middle_line">#CFD4DB</color>
+    <color name="color_grayview_line">#DBE2E9</color>
+    <color name="color_grayview_backg">#F4F7FD</color>
+    <color name="color_date">#758379</color>
+    <color name="color_frame">#d7dcde</color>
+    <color name="color_lable_line">#DBE2E9</color>
+    <color name="color_history_title">#c6ced4</color>
+    <color name="color_entry_num">#b1bcc4</color>
+    <color name="sex_normal">#d7dcde</color>
+    <color name="Medical_status">#f9fdfe</color>
+    <color name="hint">#c6ced4</color>
+    <!--病历-->
+    <color name="title_backg">#f9fdfe</color>
+    <!--主标题的颜色-->
+    <color name="title_color">#FFFFFF</color>
+    <!--新增收费辩题颜色-->
+    <color name="new_add_title_color">#3C444F</color>
+    <!--文字病例&&图片病例标题-->
+    <color name="font_img_title_color">#758397</color>
+    <!--今日患者页面title背景颜色-->
+    <color name="today_patient_title_background">#7e7ac5</color>
+    <color name="patient_queue_title_text_color">#3b454c</color>
+    <!--显示预约人数字体颜色-->
+    <color name="people_count">#758397</color>
+    <!--条目布局中的较大字体的颜色-->
+    <color name="item_title_color">#3c444f</color>
+    <!--提示搜索的布局中搜索的字体颜色-->
+    <color name="search_text_color">#b1bcc4</color>
+    <!--门诊挂号  18 预约挂号  6 -->
+    <color name="count_color">#3284ff</color>
+
+
+    <color name="white">#fff</color>
+
+    <!--患者管理-用到的颜色-开始-->
+    <color name="manage_title_color">#7e7ac5</color>
+    <color name="manage_balance">#f4f7fe</color>
+
+    <color name="D1">#3c444f</color>
+    <color name="D2">#758397</color>
+    <color name="D3">#b1bcc4</color>
+    <color name="D4">#3284ff</color>
+    <color name="EditTextCursor">#426bf2</color>
+
+    <color name="red">#e2574c</color>
+    <color name="green">#3db39e</color>
+    <color name="yellow">#fd7e04</color>
+    <color name="split_line_out">#dbe2e9</color>
+    <color name="split_line_in">#cfd4db</color>
+    <color name="make_bill_bg">#DBE2E9</color>
+
+    <!--下拉刷新颜色-->
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="holo_green_dark">#ff669900</color>
+    <color name="holo_orange_dark">#ffff8800</color>
+
+    <color name="system_bg">#f4f7fd</color>
+
+    <color name="side_bar_text">#4A4A4A</color>
+    <color name="shadow_bg">#66000000</color>
+    <color name="edit_bg">#EFEFF4</color>
+    <color name="darker_gray">#9b9b9b</color>
+    <color name="transparent">#9000</color>
+    <color name="blue_light">#48a5cc</color>
+    <color name="schuling_view_defind_bg">#7e7ac5</color>
+
+
+    <!--患者管理-用到的颜色-结束-->
+
+    <!--底部选择dialog-->
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+
+    <!--预约详情标题背景颜色-->
+    <color name="appoint_details_color">#f1f5fd</color>
+
+    <!--患者队列治疗中背景-->
+    <color name="patient_queue_zhiliaozhong_color">#ffebdf</color>
+    <!--患者队列治疗中字体颜色-->
+    <color name="patient_queue_zhiliaozhong_text_color">#f74b2f</color>
+    <color name="patient_queue_color">#f8fcfe</color>
+    <!--通知栏所需颜色-->
+    <color name="notify_color">#3c444f</color>
+    <color name="circle_bg">#f1f5fd</color>
+    <color name="circle_bg_selelct">#7e7ac5</color>
+    <color name="circle_line">#a8b3c1</color>
+    <!-- <color name="line">#ecf0f3</color>-->
+    <color name="divider_line">#9ba6b7</color>
+    <color name="line">#ecf0f3</color>
+    <color name="listitem_bg">#e9eff9</color>
+    <color name="confirm_btn_color">#0090ff</color>
+
+    <color name="cofirm_pay_demand_note_color">#d3ebeb</color>
+    <color name="calendar_week_bg">#F1F3FF</color>
+    <color name="schuling_before_bg">#f9fafc</color>
+    <color name="schuling_today_bg">#efeeff</color>
+    <color name="schuling_click_bg">#eceef1</color>
+    <color name="schuling_tab">#DEDDEF</color>
+
+    <!--登录界面字-->
+    <color name="login_icon">#80b0de</color>
+    <!--今日支付-->
+    <color name="dai_shou_fei">#00b39c</color>
+
+    <color name="event_color_01">#037BFF</color>
+    <color name="main_page_fenfe_line">#f2f2f2</color>
 </resources>
