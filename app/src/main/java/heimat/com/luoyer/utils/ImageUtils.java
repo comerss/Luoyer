@@ -40,6 +40,7 @@ public class ImageUtils {
         return file;
     }
 
+
     public static Bitmap decodeScaleImage(String path, int width, int height) {
         BitmapFactory.Options options = getBitmapOptions(path);
         int var4 = calculateInSampleSize(options, width, height);

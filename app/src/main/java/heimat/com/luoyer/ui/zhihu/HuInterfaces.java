@@ -7,9 +7,7 @@ import heimat.com.luoyer.base.BaseView;
  */
 public class HuInterfaces {
     public interface HuView extends BaseView {
-        void showData();
 
-        void showLoadMore();
     }
 
     public interface HuPresenters {

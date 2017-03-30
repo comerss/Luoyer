@@ -31,11 +31,28 @@ public abstract class BaseActivity extends AppCompatActivity implements InitInte
         initListener();
         initData();
     }
+    @Override
+    public void initBefore() {
+
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initData() {
+        //如果子类不需要实现,可以不实现
+    }
+
+    @Override
+    public void initListener() {
+
+    }
 
     /**
      * 短Toast 弹窗
-     *
-     * @param s
      */
     public void showToast(final String s) {
         Toast.makeText(BaseActivity.this, s, Toast.LENGTH_SHORT).show();
@@ -43,9 +60,6 @@ public abstract class BaseActivity extends AppCompatActivity implements InitInte
 
     /**
      * activity跳转
-     *
-     * @param activity
-     * @param <E>
      */
     public <E> void toActivity(Class<E> activity) {
         Intent intent = new Intent(this, activity);
@@ -55,9 +69,6 @@ public abstract class BaseActivity extends AppCompatActivity implements InitInte
 
     /**
      * activity跳转
-     *
-     * @param activity
-     * @param <E>
      */
     public <E> void toActivity(Class<E> activity, Bundle extras) {
         Intent intent = new Intent(this, activity);
@@ -68,9 +79,6 @@ public abstract class BaseActivity extends AppCompatActivity implements InitInte
 
     /**
      * activity跳转(返回结果)
-     *
-     * @param activity
-     * @param <E>
      */
     public <E> void toActivityForResult(Class<E> activity, Bundle extras,
                                         int requestCode) {

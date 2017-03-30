@@ -1,4 +1,4 @@
-package heimat.com.luoyer;
+package heimat.com.luoyer.ui.main;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 
+import heimat.com.luoyer.R;
 import heimat.com.luoyer.base.BaseActivity;
 import heimat.com.luoyer.ui.zhihu.HuActivity;
 
@@ -19,11 +20,6 @@ public class MainActivity extends BaseActivity {
             R.drawable.a8a,R.drawable.a8c};
     private MainAdapter mAdapter;
     ArrayList imagesList;
-    @Override
-    public void initBefore() {
-
-    }
-
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;

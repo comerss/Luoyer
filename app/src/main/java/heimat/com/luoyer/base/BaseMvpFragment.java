@@ -16,8 +16,4 @@ public abstract class BaseMvpFragment<P extends BasePresenter> extends BaseFragm
         super.onCreate(savedInstanceState);
     }
 
-    @Override
-    public void initBefore() {
-
-    }
 }

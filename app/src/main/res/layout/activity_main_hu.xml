@@ -20,12 +20,7 @@
             android:minHeight="?attr/actionBarSize"
             android:titleTextAppearance="@color/white"
             app:titleTextColor="@android:color/white"/>
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:background="@color/color_editText"
-           android:layout_height="match_parent">
 
-       </LinearLayout>
     </android.support.design.widget.AppBarLayout>
     <LinearLayout
         android:id="@+id/mViewPager"

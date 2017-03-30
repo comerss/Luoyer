@@ -16,11 +16,6 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActiv
     public abstract P newPresenter();
 
     @Override
-    public void initBefore() {
-
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
         mPresenter.detachView();

@@ -9,14 +9,13 @@
         android:supportsRtl="true"
         android:name=".base.GlobalApplication"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".TestActivity"/>
         <activity android:name=".ui.zhihu.HuActivity"/>
     </application>
 

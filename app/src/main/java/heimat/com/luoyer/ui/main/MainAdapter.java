@@ -1,4 +1,4 @@
-package heimat.com.luoyer;
+package heimat.com.luoyer.ui.main;
 
 import android.content.Context;
 
@@ -6,6 +6,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
+
+import heimat.com.luoyer.R;
 
 /**
  * Created by code5 on 2017/3/22.

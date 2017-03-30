@@ -2,9 +2,8 @@ package heimat.com.luoyer.ui.zhihu;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +23,7 @@ public class HuActivity extends BaseMvpActivity<HuPresenter> implements HuInterf
     BottomNavigationView mNavigationBar;
     @BindView(R.id.mViewPager)
     LinearLayout mViewPager;
+    private HuMainFragment mHuMainFragment;
 
     @Override
     public HuPresenter newPresenter() {
@@ -40,7 +40,13 @@ public class HuActivity extends BaseMvpActivity<HuPresenter> implements HuInterf
         mToolbar.setTitle("知乎日报");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        if (mHuMainFragment == null) {
+            mHuMainFragment = new HuMainFragment();
+        }
+        transaction.replace(R.id.mViewPager, mHuMainFragment);
+        transaction.commitAllowingStateLoss();
     }
 
     @Override
@@ -48,8 +54,14 @@ public class HuActivity extends BaseMvpActivity<HuPresenter> implements HuInterf
         mNavigationBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction transaction = fm.beginTransaction();
                 switch (item.getItemId()) {
                     case R.id.home:
+//                        if (mHuMainFragment == null) {
+                            mHuMainFragment = new HuMainFragment();
+//                        }
+                        transaction.replace(R.id.mViewPager, mHuMainFragment);
                         break;
                     case R.id.focus:
                         break;
@@ -58,6 +70,7 @@ public class HuActivity extends BaseMvpActivity<HuPresenter> implements HuInterf
                     case R.id.me:
                         break;
                 }
+                transaction.commitAllowingStateLoss();
                 return true;
             }
         });
@@ -74,34 +87,4 @@ public class HuActivity extends BaseMvpActivity<HuPresenter> implements HuInterf
 
     }
 
-    @Override
-    public void showData() {
-
-    }
-
-    @Override
-    public void showLoadMore() {
-
-    }
-    class MinePageAdapter extends FragmentPagerAdapter{
-
-        public MinePageAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public int getCount() {
-            return 0;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return super.getPageTitle(position);
-        }
-    }
 }
