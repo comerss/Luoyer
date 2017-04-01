@@ -36,20 +36,6 @@ public abstract class BaseActivity extends AppCompatActivity implements InitInte
 
     }
 
-    @Override
-    public void initView() {
-
-    }
-
-    @Override
-    public void initData() {
-        //如果子类不需要实现,可以不实现
-    }
-
-    @Override
-    public void initListener() {
-
-    }
 
     /**
      * 短Toast 弹窗

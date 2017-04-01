@@ -36,7 +36,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
-import com.zhy.autolayout.utils.AutoUtils;
 
 
 /**
@@ -62,7 +61,7 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
         super(view);
         this.views = new SparseArray<View>();
         convertView = view;
-        AutoUtils.autoSize(itemView);
+//        AutoUtils.autoSize(itemView);
 
     }
 

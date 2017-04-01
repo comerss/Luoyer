@@ -47,6 +47,7 @@ public class MainActivity extends BaseActivity {
                         toActivity(HuActivity.class);
                         break;
                     case 1:
+                        toActivity(TopLineActivity.class);
                         break;
                     case 2:
                         break;

@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.zhihu.HuActivity"/>
+        <activity android:name=".ui.main.TopLineActivity"/>
     </application>
 
 </manifest>

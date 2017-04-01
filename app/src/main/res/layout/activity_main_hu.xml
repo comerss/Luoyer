@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:minHeight="1500px"
         android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+       >
 
     </LinearLayout>
   <android.support.design.widget.BottomNavigationView
