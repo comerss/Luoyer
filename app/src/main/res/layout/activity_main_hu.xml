@@ -1,45 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimaryDark"
-            android:fitsSystemWindows="true"
-            android:minHeight="?attr/actionBarSize"
-            android:titleTextAppearance="@color/white"
-            app:titleTextColor="@android:color/white"/>
-
-    </android.support.design.widget.AppBarLayout>
     <LinearLayout
         android:id="@+id/mViewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="1500px"
         android:orientation="vertical"
-       >
+        >
 
     </LinearLayout>
-  <android.support.design.widget.BottomNavigationView
-      android:layout_width="match_parent"
-      android:layout_gravity="bottom"
-      android:id="@+id/navigationBar"
-      app:menu="@menu/navigation"
-      app:itemIconTint="@color/red"
-      app:itemTextColor="@color/red"
-      android:background="#eee"
-      android:layout_height="wrap_content">
 
-  </android.support.design.widget.BottomNavigationView>
-</android.support.design.widget.CoordinatorLayout>
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:background="#efefef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/content_container"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivIconHome"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/b_newhome_tabbar_selector"
+                />
+
+            <TextView
+                android:id="@+id/tvTextHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivIconHome"
+                android:layout_centerHorizontal="true"
+                android:text="主页"
+                android:textSize="11sp"
+                />
+
+            <TextView
+                android:id="@+id/tvBadgeHome"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_toRightOf="@+id/ivIconHome"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivIconVideo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/b_newvideo_tabbar_selector"
+                />
+
+            <TextView
+                android:id="@+id/tvTextVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivIconVideo"
+                android:layout_centerHorizontal="true"
+                android:text="视频"
+                android:textSize="11sp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivIconAttention"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/b_newcare_tabbar_selector"
+                />
+
+            <TextView
+                android:id="@+id/tvTextAttention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivIconAttention"
+                android:layout_centerHorizontal="true"
+                android:text="关注"
+                android:textSize="11sp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivIconMe"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/b_newnologin_tabbar_selector"
+                />
+
+            <TextView
+                android:id="@+id/tvTextMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivIconMe"
+                android:layout_centerHorizontal="true"
+                android:text="未登录"
+                android:textSize="11sp"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

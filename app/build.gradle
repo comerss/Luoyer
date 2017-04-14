@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+apply plugin: 'org.greenrobot.greendao'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "23.0.1"
@@ -7,7 +9,7 @@ android {
     defaultConfig {
         applicationId "heimat.com.luoyer"
         minSdkVersion 15
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -48,5 +50,6 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
 
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
+//    compile 'org.greenrobot:greendao:3.2.0'
 
 }

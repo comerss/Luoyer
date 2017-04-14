@@ -10,22 +10,34 @@
         android:layout_width="match_parent"
         android:id="@+id/appbar"
         android:layout_height="wrap_content">
-        <!--  <android.support.v7.widget.Toolbar
-              android:layout_width="match_parent"
-              android:id="@+id/toolbar"
-              app:layout_scrollFlags="scroll"
-              android:background="@color/color_statusBar"
-              android:layout_height="wrap_content">
 
-          </android.support.v7.widget.Toolbar>-->
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:background="@color/color_statusBar"
             android:orientation="vertical"
-            app:layout_scrollFlags="scroll">
-
-        </LinearLayout>
+            app:layout_scrollFlags="scroll|enterAlways">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:id="@+id/txBack"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:textSize="40px"
+                android:layout_marginLeft="50px"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="滑动一下"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="50px"
+                android:paddingBottom="40px"
+                android:paddingTop="40px"
+                />
+        </RelativeLayout>
 
         <com.flyco.tablayout.SlidingTabLayout
             android:id="@+id/slindTab"
@@ -44,8 +56,8 @@
         android:id="@+id/mViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:minHeight="1000px"
-        android:orientation="vertical">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
 
     </android.support.v4.view.ViewPager>
 
