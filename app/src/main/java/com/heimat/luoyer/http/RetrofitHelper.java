@@ -15,18 +15,11 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by code5 on 2017/4/13.
+ * Created by comerss on 2017/4/13.
  */
 public class RetrofitHelper {
     public static Retrofit mRetrofit;
-
-    /**
-     * @param isOnlyString 是否只解析字符串格式数据
-     * @return
-     */
     public static Retrofit retrofit() {
-
-
         if (mRetrofit == null) {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             if (BuildConfig.DEBUG) {
@@ -41,11 +34,10 @@ public class RetrofitHelper {
                 @Override
                 public okhttp3.Response intercept(Chain chain) throws IOException {
                     Request.Builder builder = chain.request().newBuilder();
-                    builder.addHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.108 Safari/537.36 2345Explorer/8.0.0.13547");
+                    builder.addHeader("User-Agent", "APP_Android_3.0");
                     builder.addHeader("Cache-Control", "max-age=0");
                     builder.addHeader("Upgrade-Insecure-Requests", "1");
                     builder.addHeader("X-Requested-With", "XMLHttpRequest");
-                    builder.addHeader("Cookie", "uuid=\"w:f2e0e469165542f8a3960f67cb354026\"; __tasessionId=4p6q77g6q1479458262778; csrftoken=7de2dd812d513441f85cf8272f015ce5; tt_webid=36385357187");
                     return chain.proceed(builder.build());
                 }
             });

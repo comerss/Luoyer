@@ -1,6 +1,5 @@
 package com.heimat.luoyer.http;
 
-import android.content.Context;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
@@ -15,11 +14,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
-import okhttp3.CertificatePinner;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import rx.Observable;
@@ -28,120 +25,106 @@ import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-
 /**
- * Created by ccl on 2016/3/23.
- * 基于okhttp 的封装  ，这个封装是基于我项目中
- * ------------------>太多的参数提交封装的！
- * 这个是独立可用的，但是有个缺点就是每次请求都需要重写，不能复用写过的请求，
- * 需要复用的话就需要写一个Manger类来管理所有的网络请求
+ * Created by code5 on 2017/4/14.
+ * 所有的httpHelper网络请求都放在这个类里，便于管理维护和复用！
  */
-public class HttpHelper {
+public class OkHttpUtils {
     private static Gson mGson = new Gson();
+    private static final int POST_REQUEST=1;
+    private static final int GET_REQUEST=0;
     private volatile static OkHttpClient instance; //声明成 volatile
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    public static <T extends BaseBean> void doPost(Context context, final int flag, final String url, Map<String,
+    public static <T extends BaseBean> void doPost(final String url, Map<String,
             Object> map, final Class<T> clazz, final HttpCallBack<T> httpCallBack) {
         final String json=mGson.toJson(map);
-//        final LoadingDialog loadingDialog = new LoadingDialog(context, R.style.task_progress_dialog);
-//        loadingDialog.setCanceledOnTouchOutside(false);
-//        loadingDialog.setCancelable(true);
-//        loadingDialog.show();
         Observable.just(url)
                 .map(new Func1<String, Map>() {
                     @Override
                     public Map call(String url) {
-                        return getReponse(url,json,flag);
+                        return getReponse(url,json,POST_REQUEST);
                     }
                 }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Map>() {
                     @Override
                     public void call(Map response) {
-                        doResult(response, httpCallBack, flag, clazz,null,url,json);
+                        doResult(response, httpCallBack, clazz,url,json);
                     }
                 });
     }
-    public static <T extends BaseBean> void doPost(Context context, final int flag, final String url, Map<String,
-            Object> map, boolean showDialog, final Class<T> clazz, final HttpCallBack<T> httpCallBack) {
 
-        final String json=mGson.toJson(map);
-//        final LoadingDialog loadingDialog = new LoadingDialog(context, R.style.task_progress_dialog);
-//        loadingDialog.setCanceledOnTouchOutside(false);
-//        loadingDialog.setCancelable(true);
-//        if(showDialog){
-//            loadingDialog.show();
-//        }
+    public static <T extends BaseBean> void doPost(final String url, final String json, final Class<T> clazz, final HttpCallBack<T> httpCallBack) {
         Observable.just(url)
                 .map(new Func1<String, Map>() {
                     @Override
                     public Map call(String url) {
-                        return getReponse(url, json, flag);
+                        return getReponse(url, json,POST_REQUEST);
                     }
                 }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Map>() {
                     @Override
                     public void call(Map response) {
-                        doResult(response, httpCallBack, flag, clazz,null,url,json);
+                        doResult(response, httpCallBack, clazz,url,json);
                     }
                 });
     }
-    public static <T extends BaseBean> void doPost(Context context, final int flag, final String url, final String json, boolean showDialog, final Class<T> clazz, final HttpCallBack<T> httpCallBack) {
-
-//        final LoadingDialog loadingDialog = new LoadingDialog(context, R.style.task_progress_dialog);
-//        loadingDialog.setCanceledOnTouchOutside(false);
-//        loadingDialog.setCancelable(true);
-//        if(showDialog){
-//            loadingDialog.show();
-//        }
+    public static <T extends BaseBean> void doGet(final String url, final Class<T> clazz, final HttpCallBack<T> httpCallBack) {
         Observable.just(url)
                 .map(new Func1<String, Map>() {
                     @Override
                     public Map call(String url) {
-                        return getReponse(url, json, flag);
+                        return getReponse(url, "",POST_REQUEST);
                     }
                 }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Map>() {
                     @Override
                     public void call(Map response) {
-                        doResult(response, httpCallBack, flag, clazz,null,url,json);
+                        doResult(response, httpCallBack, clazz,url,"");
                     }
                 });
     }
-    private static <T extends BaseBean> void doResult(Map response, HttpCallBack<T> httpCallBack, int flag, Class<T> clazz, Object loadingDialog, String url, String json) {
+    private static <T extends BaseBean> void doResult(Map response, HttpCallBack<T> httpCallBack,  Class<T> clazz, String url, String json) {
         if(response!=null){
             if(TextUtils.equals(String.valueOf(response.get("code")),"200")){
                 String result= response.get("body").toString();
-                LogUtil.i("POST请求:", url + "\n" + json);
-                LogUtil.i("Post返回: ",result);
-                httpCallBack.onSuccess(flag,result,mGson.fromJson(result,clazz));
+                LogUtil.i("请求:", url + "\n" + json);
+                LogUtil.i("返回: ",result);
+                httpCallBack.onSuccess(99,result,mGson.fromJson(result,clazz));
             }else{
                 httpCallBack.onError((Integer) response.get("code"),(String) response.get("message"));
-                LogUtil.i("POST请求:", url + "\n" + json);
-                LogUtil.i("Post返回: ","错误信息："+response.get("message").toString());
+                LogUtil.i("请求:", url + "\n" + json);
+                LogUtil.i("返回: ","错误信息："+response.get("message").toString());
             }
         }
-//        if(loadingDialog!=null&&loadingDialog.isShowing()){
-//            loadingDialog.dismiss();
-//        }
     }
 
 
-    private static Map getReponse(String url, String json, int flag) {
+    private static Map getReponse(String url, String json,int requestType) {
         Map<String ,Object> responsemap = new HashMap<String ,Object>();
         RequestBody body = RequestBody.create(JSON, json);
-        Request request = new Request.Builder().url(url)
-                .post(body).tag(flag)
-                .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
-                .addHeader("User-Agent",Constant.User_Agent)
-                .build();
+        okhttp3.Request request=null;
+        if(requestType==0){
+            request= new okhttp3.Request.Builder().url(url)
+                    .get()
+                    .put(body)
+                    .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
+                    .addHeader("User-Agent",Constant.User_Agent)
+                    .build();
+        }else{
+            request= new okhttp3.Request.Builder().url(url)
+                    .post(body)
+                    .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
+                    .addHeader("User-Agent",Constant.User_Agent)
+                    .build();
+        }
         Response response = null;
         try {
             response = getInstance().newCall(request).execute();
             responsemap.put("code",response.code());
-            responsemap.put("message",response.message() == null ? "" : response.message());
+            responsemap.put("message",response.message() == null ? "" : response.message());//错误信息放在哪接口定，这只是我的
             responsemap.put("body",response.body().string());
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,11 +143,6 @@ public class HttpHelper {
                             .connectTimeout(40, TimeUnit.SECONDS)
                             .readTimeout(60, TimeUnit.SECONDS)
                             .writeTimeout(60, TimeUnit.SECONDS)
-//                            .addInterceptor(new LoggingInterceptor())
-                            .certificatePinner(new CertificatePinner
-                                    .Builder()
-//                                    .add("222222.com", "sha256/3333333333333333=")//证书
-                                    .build())
                             .build();
                 }
             }
@@ -175,7 +153,7 @@ public class HttpHelper {
         @Override
         public Response intercept(Interceptor.Chain chain) throws IOException {
             //这个chain里面包含了request和response，所以你要什么都可以从这里拿
-            Request request = chain.request();
+            okhttp3.Request request = chain.request();
             long t1 = System.nanoTime();//请求发起的时间
             LogUtil.i("Post请求：",request.url()+"");
             Response response = chain.proceed(request);

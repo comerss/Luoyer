@@ -5,12 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.heimat.luoyer.R;
 import com.heimat.luoyer.base.BaseActivity;
 import com.heimat.luoyer.ui.zhihu.HuActivity;
 
 import java.util.ArrayList;
 
-import heimat.com.luoyer.R;
 
 public class MainActivity extends BaseActivity {
 
