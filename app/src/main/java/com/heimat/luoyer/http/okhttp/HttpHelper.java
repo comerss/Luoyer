@@ -1,10 +1,11 @@
-package com.heimat.luoyer.http;
+package com.heimat.luoyer.http.okhttp;
 
 import android.content.Context;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
 import com.heimat.luoyer.base.BaseBean;
+import com.heimat.luoyer.http.Constant;
 import com.heimat.luoyer.interfaces.HttpCallBack;
 import com.heimat.luoyer.utils.LogUtil;
 import com.heimat.luoyer.utils.SharedHelper;
@@ -135,7 +136,7 @@ public class HttpHelper {
         Request request = new Request.Builder().url(url)
                 .post(body).tag(flag)
                 .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
-                .addHeader("User-Agent",Constant.User_Agent)
+                .addHeader("User-Agent", Constant.User_Agent)
                 .build();
         Response response = null;
         try {

@@ -1,4 +1,4 @@
-package com.heimat.luoyer.http;
+package com.heimat.luoyer.http.okhttp;
 
 import com.heimat.luoyer.base.BaseBean;
 import com.heimat.luoyer.interfaces.HttpCallBack;

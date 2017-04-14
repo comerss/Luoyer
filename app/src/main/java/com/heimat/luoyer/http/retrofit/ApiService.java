@@ -1,4 +1,6 @@
-package com.heimat.luoyer.base;
+package com.heimat.luoyer.http.retrofit;
+
+import com.heimat.luoyer.base.BaseBean;
 
 import java.util.Map;
 

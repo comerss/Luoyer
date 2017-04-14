@@ -1,8 +1,7 @@
-package com.heimat.luoyer.http;
+package com.heimat.luoyer.http.retrofit;
 
 import com.google.gson.GsonBuilder;
 import com.heimat.luoyer.BuildConfig;
-import com.heimat.luoyer.base.ApiService;
 
 import java.io.IOException;
 

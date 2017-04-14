@@ -1,9 +1,10 @@
-package com.heimat.luoyer.http;
+package com.heimat.luoyer.http.okhttp;
 
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
 import com.heimat.luoyer.base.BaseBean;
+import com.heimat.luoyer.http.Constant;
 import com.heimat.luoyer.interfaces.HttpCallBack;
 import com.heimat.luoyer.utils.LogUtil;
 import com.heimat.luoyer.utils.SharedHelper;
@@ -111,7 +112,7 @@ public class OkHttpUtils {
                     .get()
                     .put(body)
                     .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
-                    .addHeader("User-Agent",Constant.User_Agent)
+                    .addHeader("User-Agent", Constant.User_Agent)
                     .build();
         }else{
             request= new okhttp3.Request.Builder().url(url)

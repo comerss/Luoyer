@@ -1,5 +1,6 @@
-package com.heimat.luoyer.http;
+package com.heimat.luoyer.http.okhttp;
 
+import com.heimat.luoyer.http.Constant;
 import com.heimat.luoyer.ui.main.NetData;
 
 import java.util.Map;

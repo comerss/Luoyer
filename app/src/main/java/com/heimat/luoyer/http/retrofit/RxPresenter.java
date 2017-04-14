@@ -1,4 +1,8 @@
-package com.heimat.luoyer.base;
+package com.heimat.luoyer.http.retrofit;
+
+import com.heimat.luoyer.base.BaseView;
+import com.heimat.luoyer.base.Presenter;
+import com.heimat.luoyer.base.RxBus;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -19,6 +23,7 @@ public class RxPresenter<V extends BaseView> implements Presenter<V> {
 
     @Override
     public void detachView() {
+        onUnsubscribe();
         mvpView=null;
     }
 
@@ -31,7 +36,7 @@ public class RxPresenter<V extends BaseView> implements Presenter<V> {
     /**
      * 发送消息
      */
-    public void post(Object msg) {
+    public <T> void post(T msg) {
         RxBus.getDefault().post(msg);
     }
 
@@ -42,6 +47,7 @@ public class RxPresenter<V extends BaseView> implements Presenter<V> {
         }
         mCompositeSubscription.add(observable
                 .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber));
     }
