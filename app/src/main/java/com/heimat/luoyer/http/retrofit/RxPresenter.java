@@ -16,15 +16,20 @@ import rx.subscriptions.CompositeSubscription;
 public class RxPresenter<V extends BaseView> implements Presenter<V> {
     protected V mvpView;
     CompositeSubscription mCompositeSubscription;
+
     @Override
     public void attachView(V view) {
-        mvpView=view;
+        mvpView = view;
     }
 
     @Override
     public void detachView() {
         onUnsubscribe();
-        mvpView=null;
+        mvpView = null;
+    }
+
+    public RxPresenter(V mvpView) {
+        attachView(mvpView);
     }
 
     //RXjava取消注册，以避免内存泄露
@@ -33,6 +38,7 @@ public class RxPresenter<V extends BaseView> implements Presenter<V> {
             mCompositeSubscription.unsubscribe();
         }
     }
+
     /**
      * 发送消息
      */
