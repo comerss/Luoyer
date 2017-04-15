@@ -11,11 +11,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.flyco.tablayout.SlidingTabLayout;
+import com.heimat.luoyer.R;
 import com.heimat.luoyer.base.BaseActivity;
-import com.heimat.luoyer.ui.zhihu.HuListFragment;
+import com.heimat.luoyer.ui.zhihu.fragment.HuListFragment;
 
 import butterknife.BindView;
-import heimat.com.luoyer.R;
 
 /**
  * Created by code5 on 2017/3/31.

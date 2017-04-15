@@ -1,7 +1,9 @@
 package com.heimat.luoyer.http.retrofit;
 
 import com.heimat.luoyer.base.BaseBean;
+import com.heimat.luoyer.ui.zhihu.bean.NewsSummary;
 
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.http.GET;
@@ -21,4 +23,6 @@ public interface ApiService {
     Observable<BaseBean> getList(@QueryMap Map<String,Object> map);
     @GET("getService")
     Observable<BaseBean> getDatas(@Query("Name") String name,@Query("Age") int age);
+    Observable <List<NewsSummary>> getNewsListData(String type, final String id, int startPage);
+
 }

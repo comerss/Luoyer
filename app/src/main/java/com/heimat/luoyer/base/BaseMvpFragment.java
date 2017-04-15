@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 /**
  * Created by code5 on 2017/3/29.
  */
-public abstract class BaseMvpFragment<P extends BasePresenter> extends BaseFragment  {
+public abstract class BaseMvpFragment<P extends BasePresenter> extends BaseFragment implements BaseView {
     public P mPresenter;
     public abstract P newPresenter();
 
@@ -16,4 +16,8 @@ public abstract class BaseMvpFragment<P extends BasePresenter> extends BaseFragm
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void OnError(String msg) {
+        showToast(msg);
+    }
 }

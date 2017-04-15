@@ -7,11 +7,11 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 
 import com.flyco.tablayout.SlidingTabLayout;
-import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.heimat.luoyer.R;
 import com.heimat.luoyer.base.BaseFragment;
+import com.heimat.luoyer.ui.zhihu.fragment.HuListFragment;
 
 import butterknife.BindView;
-import heimat.com.luoyer.R;
 
 /**
  * Created by code5 on 2017/3/29.
@@ -31,25 +31,13 @@ public class HuMainFragment extends BaseFragment {
 
     @Override
     public void initView() {
-        mViewPager.setAdapter(new MinePagerAdapter(getActivity().getSupportFragmentManager()));
+        mViewPager.setAdapter(new MinePagerAdapter(getChildFragmentManager()));
         mSlindTab.setViewPager(mViewPager);
         mSlindTab.setCurrentTab(0);
     }
 
     @Override
     public void initListener() {
-        mSlindTab.setOnTabSelectListener(new OnTabSelectListener() {
-            @Override
-            public void onTabSelect(int position) {
-                Log.i("Position", "------>" + position);
-                mSlindTab.setCurrentTab(position);
-            }
-
-            @Override
-            public void onTabReselect(int position) {
-                Log.i("unPosition", "---un--->" + position);
-            }
-        });
     }
 
     @Override

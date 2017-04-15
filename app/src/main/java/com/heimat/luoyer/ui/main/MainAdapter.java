@@ -4,10 +4,10 @@ import android.content.Context;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.heimat.luoyer.R;
 
 import java.util.List;
 
-import heimat.com.luoyer.R;
 
 /**
  * Created by code5 on 2017/3/22.

@@ -1,9 +1,9 @@
 package com.heimat.luoyer.ui.zhihu.fragment;
 
+import com.heimat.luoyer.R;
 import com.heimat.luoyer.base.BaseMvpFragment;
 import com.heimat.luoyer.base.BasePresenter;
 
-import heimat.com.luoyer.R;
 
 /**
  * Created by code5 on 2017/4/10.

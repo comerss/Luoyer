@@ -32,25 +32,26 @@ import rx.schedulers.Schedulers;
  */
 public class OkHttpUtils {
     private static Gson mGson = new Gson();
-    private static final int POST_REQUEST=1;
-    private static final int GET_REQUEST=0;
+    private static final int POST_REQUEST = 1;
+    private static final int GET_REQUEST = 0;
     private volatile static OkHttpClient instance; //声明成 volatile
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
     public static <T extends BaseBean> void doPost(final String url, Map<String,
             Object> map, final Class<T> clazz, final HttpCallBack<T> httpCallBack) {
-        final String json=mGson.toJson(map);
+        final String json = mGson.toJson(map);
         Observable.just(url)
                 .map(new Func1<String, Map>() {
                     @Override
                     public Map call(String url) {
-                        return getReponse(url,json,POST_REQUEST);
+                        return getReponse(url, json, POST_REQUEST);
                     }
                 }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Map>() {
                     @Override
                     public void call(Map response) {
-                        doResult(response, httpCallBack, clazz,url,json);
+                        doResult(response, httpCallBack, clazz, url, json);
                     }
                 });
     }
@@ -60,77 +61,80 @@ public class OkHttpUtils {
                 .map(new Func1<String, Map>() {
                     @Override
                     public Map call(String url) {
-                        return getReponse(url, json,POST_REQUEST);
+                        return getReponse(url, json, POST_REQUEST);
                     }
                 }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Map>() {
                     @Override
                     public void call(Map response) {
-                        doResult(response, httpCallBack, clazz,url,json);
+                        doResult(response, httpCallBack, clazz, url, json);
                     }
                 });
     }
+
     public static <T extends BaseBean> void doGet(final String url, final Class<T> clazz, final HttpCallBack<T> httpCallBack) {
         Observable.just(url)
                 .map(new Func1<String, Map>() {
                     @Override
                     public Map call(String url) {
-                        return getReponse(url, "",POST_REQUEST);
+                        return getReponse(url, "", POST_REQUEST);
                     }
                 }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Map>() {
                     @Override
                     public void call(Map response) {
-                        doResult(response, httpCallBack, clazz,url,"");
+                        doResult(response, httpCallBack, clazz, url, "");
                     }
                 });
     }
-    private static <T extends BaseBean> void doResult(Map response, HttpCallBack<T> httpCallBack,  Class<T> clazz, String url, String json) {
-        if(response!=null){
-            if(TextUtils.equals(String.valueOf(response.get("code")),"200")){
-                String result= response.get("body").toString();
+
+    private static <T extends BaseBean> void doResult(Map response, HttpCallBack<T> httpCallBack, Class<T> clazz, String url, String json) {
+        if (response != null) {
+            if (TextUtils.equals(String.valueOf(response.get("code")), "200")) {
+                String result = response.get("body").toString();
                 LogUtil.i("请求:", url + "\n" + json);
-                LogUtil.i("返回: ",result);
-                httpCallBack.onSuccess(99,result,mGson.fromJson(result,clazz));
-            }else{
-                httpCallBack.onError((Integer) response.get("code"),(String) response.get("message"));
+                LogUtil.i("返回: ", result);
+                httpCallBack.onSuccess(99, result, mGson.fromJson(result, clazz));
+            } else {
+                httpCallBack.onError(99,TextUtils.isEmpty(response.get("message").toString()) ? response.get("body").toString() : response.get("message").toString());
                 LogUtil.i("请求:", url + "\n" + json);
-                LogUtil.i("返回: ","错误信息："+response.get("message").toString());
+                LogUtil.i("返回: ", "错误信息：" + response.get("message").toString());
             }
         }
     }
 
 
-    private static Map getReponse(String url, String json,int requestType) {
-        Map<String ,Object> responsemap = new HashMap<String ,Object>();
+    private static Map getReponse(String url, String json, int requestType) {
+        Map<String, Object> responsemap = new HashMap<String, Object>();
         RequestBody body = RequestBody.create(JSON, json);
-        okhttp3.Request request=null;
-        if(requestType==0){
-            request= new okhttp3.Request.Builder().url(url)
-                    .get()
-                    .put(body)
-                    .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
-                    .addHeader("User-Agent", Constant.User_Agent)
-                    .build();
-        }else{
-            request= new okhttp3.Request.Builder().url(url)
-                    .post(body)
-                    .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
-                    .addHeader("User-Agent",Constant.User_Agent)
-                    .build();
-        }
-        Response response = null;
+        okhttp3.Request request = null;
         try {
+
+            if (requestType == 0) {
+                request = new okhttp3.Request.Builder().url(url)
+                        .get()
+                        .put(body)
+                        .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
+                        .addHeader("User-Agent", Constant.User_Agent)
+                        .build();
+            } else {
+                request = new okhttp3.Request.Builder().url(url)
+                        .post(body)
+                        .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
+                        .addHeader("User-Agent", Constant.User_Agent)
+                        .build();
+            }
+            Response response = null;
             response = getInstance().newCall(request).execute();
-            responsemap.put("code",response.code());
-            responsemap.put("message",response.message() == null ? "" : response.message());//错误信息放在哪接口定，这只是我的
-            responsemap.put("body",response.body().string());
+            responsemap.put("code", response.code());
+            responsemap.put("message", response.message() == null ? "" : response.message());//错误信息放在哪接口定，这只是我的
+            responsemap.put("body", response.body().string());
         } catch (Exception e) {
             e.printStackTrace();
             responsemap.put("code", "");
-            responsemap.put("message","Response is null");
+            responsemap.put("message", "Response is null");
             responsemap.put("body", "");
         }
         return responsemap;
@@ -150,13 +154,14 @@ public class OkHttpUtils {
         }
         return instance;
     }
+
     static class LoggingInterceptor implements Interceptor {
         @Override
         public Response intercept(Interceptor.Chain chain) throws IOException {
             //这个chain里面包含了request和response，所以你要什么都可以从这里拿
             okhttp3.Request request = chain.request();
             long t1 = System.nanoTime();//请求发起的时间
-            LogUtil.i("Post请求：",request.url()+"");
+            LogUtil.i("Post请求：", request.url() + "");
             Response response = chain.proceed(request);
             long t2 = System.nanoTime();//收到响应的时间
             //这里不能直接使用response.body().string()的方式输出日志
@@ -165,6 +170,7 @@ public class OkHttpUtils {
             return response;
         }
     }
+
     /**
      * 取消某个请求
      *

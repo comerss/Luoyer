@@ -7,12 +7,9 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.heimat.luoyer.R;
 import com.heimat.luoyer.base.BaseActivity;
-import com.heimat.luoyer.http.okhttp.HttpManager;
-import com.heimat.luoyer.interfaces.HttpCallBack;
 import com.heimat.luoyer.ui.zhihu.HuActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class MainActivity extends BaseActivity {
@@ -68,18 +65,18 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
-        //只需要传参数和回调，内部逻辑交给其他实现！
-        HttpManager.getData(new HashMap<String, Object>()).execute(new HttpCallBack<NetData>() {
-            @Override
-            public void onSuccess(int requestCode, String json, NetData netData) {
-
-            }
-
-            @Override
-            public void onError(int errorCode, String errorMessage) {
-
-            }
-        });
+        //只需要传参数和回调，内部逻辑交给其他实现！示例代码
+//        HttpManager.getData(new HashMap<String, Object>()).execute(new HttpCallBack<NetData>() {
+//            @Override
+//            public void onSuccess(int requestCode, String json, NetData netData) {
+//
+//            }
+//
+//            @Override
+//            public void onError(int errorCode, String errorMessage) {
+//
+//            }
+//        });
     }
 
 }

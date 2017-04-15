@@ -1,17 +1,20 @@
 package com.heimat.luoyer.ui.zhihu.fragment;
 
+import com.heimat.luoyer.R;
 import com.heimat.luoyer.base.BaseMvpFragment;
-import com.heimat.luoyer.base.BasePresenter;
+import com.heimat.luoyer.ui.zhihu.HuInterfaces;
+import com.heimat.luoyer.ui.zhihu.bean.NewsSummary;
 
-import heimat.com.luoyer.R;
+import java.util.List;
+
 
 /**
  * Created by code5 on 2017/4/10.
  */
-public class FocusFragment extends BaseMvpFragment {
+public class FocusFragment extends BaseMvpFragment<ListPresenter> implements HuInterfaces.HuListView {
     @Override
-    public BasePresenter newPresenter() {
-        return null;
+    public ListPresenter newPresenter() {
+        return new ListPresenter(getActivity(),this);
     }
 
     @Override
@@ -28,4 +31,10 @@ public class FocusFragment extends BaseMvpFragment {
     public void initData() {
 
     }
+
+    @Override
+    public void showList(List<NewsSummary> newsSummary) {
+
+    }
+
 }
