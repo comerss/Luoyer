@@ -86,6 +86,7 @@ public class ImagePreviewActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle((position + 1) + "/" + images.size());
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.mipmap.ic_back);
 
