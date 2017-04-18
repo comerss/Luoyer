@@ -16,7 +16,7 @@ import rx.Observable;
  * Created by code5 on 2017/4/13.
  */
 public interface ApiService {
-    String API_SERVER_URL="";
+    String API_SERVER_URL="http://tianhau.com";
     @GET("getService")
     Observable<BaseBean> getData();
     @POST("")

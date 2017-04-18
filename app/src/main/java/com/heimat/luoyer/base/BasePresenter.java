@@ -8,9 +8,11 @@ import com.heimat.luoyer.http.retrofit.RetrofitHelper;
  */
 public class BasePresenter<V extends BaseView> implements Presenter<V> {
     protected V mvpView;
-    public final ApiService mApiService;
+    public ApiService mApiService=null;
     public BasePresenter(V mvpView){
-        mApiService = RetrofitHelper.getApiService();
+        if(mApiService==null){
+            mApiService = RetrofitHelper.getApiService();
+        }
         attachView(mvpView);
     }
     @Override
