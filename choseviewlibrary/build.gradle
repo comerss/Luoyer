@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 android {
-    compileSdkVersion 23
+    compileSdkVersion 25
     buildToolsVersion "23.0.3"
     resourcePrefix "yeteng"    //这个随便填
     defaultConfig {
@@ -20,7 +20,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.google.code.gson:gson:2.7'
 }
 //* 以下开始是将Android Library上传到jcenter的相关配置*
@@ -29,18 +29,17 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 //项目主页
-def siteUrl = 'https://github.com/heimaer/Luoyer'    // project homepage
+def siteUrl = 'https://github.com/comerss/Luoyer'    // project homepage
 //项目的版本控制地址
-def gitUrl = 'https://github.com/heimaer/Luoyer.git' // project git
+def gitUrl = 'https://github.com/comerss/Luoyer.git' // project git
 
 //发布到组织名称名字，必须填写
-group = "heimat.com.luoyer"
+group = "com.comerss.luoyer"
 //发布到JCenter上的项目名字，必须填写
 def libName = "choseviewlibrary"
 // 版本号，下次更新是只需要更改版本号即可
-version = "1.0.0"
-/*  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.bluemobi.dylan:sqlitelibrary:1.0'  */
-
+version = "1.0.2"
+//  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.bluemobi.dylan:sqlitelibrary:1.0'
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -59,9 +58,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'humaner'
-                        name 'humaner'
-                        email 'humaner@outlook.com'
+                        id 'comerss'
+                        name 'comerss'
+                        email 'comerss@outlook.com'
                     }
                 }
                 scm {
@@ -85,7 +84,7 @@ task javadoc(type: Javadoc) {
     options.charSet 'UTF-8'
     options.author true
     options.version true
-    options.links "https://github.com/heimaer/Luoyer/docs/javadoc"
+    options.links "https://github.com/comerss/Luoyer/Luoyer/docs/javadoc"
     failOnError false
 }
 
@@ -113,6 +112,7 @@ bintray {
     key = properties.getProperty("bintray.apikey")   //读取 local.properties 文件里面的 bintray.apikey
     configurations = ['archives']
     pkg {
+        userOrg="comerss"
         repo = "maven"
         name = libName    //发布到JCenter上的项目名字，必须填写
         desc = '城市三级地址选择，二级联动，三级联动，时间选择器'    //项目描述

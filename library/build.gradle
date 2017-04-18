@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -31,11 +31,12 @@ apply plugin: 'com.jfrog.bintray'
 
 // 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
 // 这个version影响后面的引用
-version = "1.0.0"
+version = "1.0.1"
+//添加
 
-def siteUrl = 'https://github.com/heimaer/Luoyer'   // 项目的主页
-def gitUrl = 'https://github.com/heimaer/Luoyer.git'   // Git仓库的url
-group = "yifeiyuan.library.crashcatcher"            // Maven Group ID for the artifact，一般填你唯一的包名
+def siteUrl = 'https://github.com/comerss/Luoyer'   // 项目的主页
+def gitUrl = 'https://github.com/comerss/Luoyer.git'   // Git仓库的url
+group = "com.heimat.luoyer"            // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -54,9 +55,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'heimat'        //填写的一些基本信息
-                        name 'heimat'
-                        email 'humaner@outlook.com'
+                        id 'tengss'        //填写的一些基本信息
+                        name 'tengss'
+                        email 'tengss@outlook.com'
                     }
                 }
                 scm {
@@ -80,7 +81,7 @@ task javadoc(type: Javadoc) {
     options.charSet 'UTF-8'
     options.author true
     options.version true
-    options.links "https://github.com/heimaer/Luoyer/docs/javadoc"
+    options.links "https://github.com/comerss/Luoyer/docs/javadoc"
     failOnError false
 }
 
@@ -111,8 +112,9 @@ bintray {
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
+        userOrg="comerss"
         repo = "maven"
-        name = "baseAdapterHelper"    //发布到JCenter上的项目名字
+        name = "BaseAdapterHelper"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]

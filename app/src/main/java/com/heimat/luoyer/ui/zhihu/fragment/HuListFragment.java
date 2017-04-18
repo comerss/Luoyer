@@ -50,7 +50,7 @@ public class HuListFragment extends BaseMvpFragment<ListPresenter> implements Hu
 
     @Override
     public void initData() {
-        mPresenter.getNewsList(mNewsType,mNewsId,1);
+//        mPresenter.getNewsList(mNewsType,mNewsId,1);
     }
 
     @Override

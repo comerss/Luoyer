@@ -1,1 +1,1 @@
-include ':app', ':library', ':choseviewlibrary'
+include ':app', ':library', ':choseviewlibrary', ':albumselectlibrary'

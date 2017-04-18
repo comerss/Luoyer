@@ -115,7 +115,6 @@ public class OkHttpUtils {
             if (requestType == 0) {
                 request = new okhttp3.Request.Builder().url(url)
                         .get()
-                        .put(body)
                         .addHeader("Authorization", SharedHelper.getSetting("AccessToken"))
                         .addHeader("User-Agent", Constant.User_Agent)
                         .build();

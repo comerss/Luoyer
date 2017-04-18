@@ -139,4 +139,9 @@ public class HuActivity extends BaseMvpActivity<HuPresenter> implements HuInterf
         }
         transaction.commitAllowingStateLoss();
     }
+
+    @Override
+    public void OnError(String msg) {
+
+    }
 }
