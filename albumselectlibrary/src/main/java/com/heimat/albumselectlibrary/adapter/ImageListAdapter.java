@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.heimat.albumselectlibrary.R;
 import com.heimat.albumselectlibrary.model.LocalMedia;
-import com.heimat.albumselectlibrary.view.ImageSelectorActivity;
+import com.heimat.albumselectlibrary.ImageSelectorActivity;
 
 import java.io.File;
 import java.util.ArrayList;

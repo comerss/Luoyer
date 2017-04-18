@@ -1,4 +1,4 @@
-package com.heimat.albumselectlibrary.view;
+package com.heimat.albumselectlibrary;
 
 import android.Manifest;
 import android.app.Activity;
@@ -19,7 +19,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.heimat.albumselectlibrary.R;
 import com.heimat.albumselectlibrary.adapter.ImageFolderAdapter;
 import com.heimat.albumselectlibrary.adapter.ImageListAdapter;
 import com.heimat.albumselectlibrary.model.LocalMedia;
@@ -28,6 +27,9 @@ import com.heimat.albumselectlibrary.utils.FileUtils;
 import com.heimat.albumselectlibrary.utils.GridSpacingItemDecoration;
 import com.heimat.albumselectlibrary.utils.LocalMediaLoader;
 import com.heimat.albumselectlibrary.utils.ScreenUtils;
+import com.heimat.albumselectlibrary.view.FolderWindow;
+import com.heimat.albumselectlibrary.view.ImageCropActivity;
+import com.heimat.albumselectlibrary.view.ImagePreviewActivity;
 
 import java.io.File;
 import java.util.ArrayList;
