@@ -10,7 +10,7 @@
     <dimen name="item_emoticon_size_default">32dp</dimen>
     <dimen name="bar_tool_btn_width">56dp</dimen>
     <dimen name="margin_layout">16dp</dimen>
-    <dimen name="margin_text">8dp</dimen>
+    <dimen name="margin_text">4dp</dimen>
     <dimen name="big_image_size">74dp</dimen>
     <dimen name="middle_text_size">17sp</dimen>
     <dimen name="mini_text_size">13sp</dimen>

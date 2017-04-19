@@ -28,12 +28,15 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/folder_list"
         android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_above="@+id/lyBottom"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:scrollbars="none" />
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/lyBottom"
         android:layout_height="@dimen/bar_height"
         android:layout_alignParentBottom="true"
         android:background="@color/bar_grey_90"
