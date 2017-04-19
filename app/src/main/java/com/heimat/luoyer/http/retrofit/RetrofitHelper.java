@@ -43,7 +43,7 @@ public class RetrofitHelper {
 
             OkHttpClient okHttpClient = builder.build();
             mRetrofit = new Retrofit.Builder()
-                    .baseUrl(ApiService.API_SERVER_URL)
+                    .baseUrl(ApiService.API_SERVER_URL)//知乎的主机地址，其他需要直接给地址
                     .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().create()))
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(okHttpClient)

@@ -62,6 +62,7 @@ public class LoadingDialog {
     public static void dismiss() {
         if(mLoadingDialog != null) {
             mLoadingDialog.cancel();
+            mLoadingDialog.dismiss();
         }
     }
     interface onDismissListener{

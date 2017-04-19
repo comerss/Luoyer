@@ -1,5 +1,6 @@
 package com.heimat.luoyer.utils;
 
+import android.text.TextUtils;
 import android.widget.Toast;
 
 /**
@@ -11,12 +12,14 @@ public class ToastUtils {
     /**
      * 显示Toast
      */
-    public static void showToast( CharSequence text) {
+    public static void showToast(CharSequence text) {
         if (mToast == null) {
             mToast = Toast.makeText(UIUtils.getContext(), text, Toast.LENGTH_SHORT);
         } else {
             mToast.setText(text);
         }
-        mToast.show();
+        if (!TextUtils.isEmpty(text)) {
+            mToast.show();
+        }
     }
 }

@@ -2,7 +2,8 @@ package com.heimat.luoyer.ui.zhihu;
 
 
 import com.heimat.luoyer.base.BaseView;
-import com.heimat.luoyer.ui.zhihu.bean.NewsSummary;
+import com.heimat.luoyer.ui.zhihu.bean.News;
+import com.heimat.luoyer.ui.zhihu.bean.ResultResponse;
 
 import java.util.List;
 
@@ -31,6 +32,6 @@ public class HuInterfaces {
         void getLoadMore();
     }
     public interface HuListView extends BaseView{
-        void showList(List<NewsSummary> newsSummary);
+        void showList(ResultResponse<List<News>> newsSummary);
     }
 }

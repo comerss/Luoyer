@@ -17,18 +17,19 @@ import rx.subscriptions.CompositeSubscription;
  * Created by code5 on 2017/4/10.
  */
 public class RxPresenter<V extends BaseView> extends BasePresenter {
-    protected V mvpView;
+    protected V mView;
     CompositeSubscription mCompositeSubscription;
     public Context mContext;
-    public RxPresenter(BaseView mvpView, Context context) {
+    public RxPresenter(V mvpView, Context context) {
         super(mvpView);
+        mView=mvpView;
         mContext=context;
     }
 
     @Override
     public void detachView() {
         onUnsubscribe();
-        mvpView = null;
+        mView = null;
     }
 
     //RXjava取消注册，以避免内存泄露

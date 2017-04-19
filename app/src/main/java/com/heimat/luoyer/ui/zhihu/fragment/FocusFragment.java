@@ -3,7 +3,8 @@ package com.heimat.luoyer.ui.zhihu.fragment;
 import com.heimat.luoyer.R;
 import com.heimat.luoyer.base.BaseMvpFragment;
 import com.heimat.luoyer.ui.zhihu.HuInterfaces;
-import com.heimat.luoyer.ui.zhihu.bean.NewsSummary;
+import com.heimat.luoyer.ui.zhihu.bean.News;
+import com.heimat.luoyer.ui.zhihu.bean.ResultResponse;
 
 import java.util.List;
 
@@ -32,9 +33,9 @@ public class FocusFragment extends BaseMvpFragment<ListPresenter> implements HuI
 
     }
 
+
     @Override
-    public void showList(List<NewsSummary> newsSummary) {
+    public void showList(ResultResponse<List<News>> newsSummary) {
 
     }
-
 }

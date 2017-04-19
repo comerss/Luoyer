@@ -1,5 +1,6 @@
 package com.heimat.luoyer.ui.zhihu;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -55,6 +56,9 @@ public class HuMainFragment extends BaseFragment {
         public Fragment getItem(int position) {
             Log.i("Position", "选择的位置==Postion" + position);
             mHuListFragment = new HuListFragment();
+            Bundle bundle=new Bundle();
+            bundle.putInt("Position",position);
+            mHuListFragment.setArguments(bundle);
             return mHuListFragment;
         }
 

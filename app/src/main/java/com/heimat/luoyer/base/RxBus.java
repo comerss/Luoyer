@@ -42,4 +42,5 @@ public class RxBus {
             }
         }).cast(eventType);
     }
+
 }
