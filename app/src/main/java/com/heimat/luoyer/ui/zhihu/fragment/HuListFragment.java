@@ -28,9 +28,6 @@ public class HuListFragment extends BaseMvpFragment<ListPresenter> implements Hu
     @BindView(R.id.swipeRefresh)
     SwipeRefreshLayout mSwipeRefresh;
     Unbinder unbinder;
-    private int mStatus;
-    private String mNewsId;
-    private String mNewsType;
     private String[] titles = new String[]{"推荐", "视频", "热点", "社会", "娱乐", "科技", "汽车", "体育", "财经", "军事", "国际", "时尚", "游戏", "旅游", "历史", "探索", "美食", "育儿", "养生", "故事", "美文"};
     private String[] titlesCode = new String[]{"__all__", "video", "news_hot", "news_society", "news_entertainment", "news_tech", "news_car", "news_sports", "news_finance", "news_military", "news_world", "news_fashion", "news_game", "news_travel", "news_history", "news_discovery", "news_food", "news_baby", "news_regimen", "news_story", "news_essay"};
     private int pageIndex = 1;
@@ -40,9 +37,6 @@ public class HuListFragment extends BaseMvpFragment<ListPresenter> implements Hu
     @Override
     public void initBefore() {
         if (getArguments() != null) {
-            mStatus = getArguments().getInt("Status");
-            mNewsId = getArguments().getString("news_id");
-            mNewsType = getArguments().getString("news_type");
             mPosition = getArguments().getInt("Position");
         }
     }
