@@ -27,6 +27,7 @@ import com.heimat.albumselectlibrary.utils.FileUtils;
 import com.heimat.albumselectlibrary.utils.GridSpacingItemDecoration;
 import com.heimat.albumselectlibrary.utils.LocalMediaLoader;
 import com.heimat.albumselectlibrary.utils.ScreenUtils;
+import com.heimat.albumselectlibrary.utils.StatusColorUtils;
 import com.heimat.albumselectlibrary.view.FolderWindow;
 import com.heimat.albumselectlibrary.view.ImageCropActivity;
 import com.heimat.albumselectlibrary.view.ImagePreviewActivity;
@@ -90,6 +91,7 @@ public abstract class ImageSelectorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imageselector);
         initView(savedInstanceState);
+        StatusColorUtils.setStatusBarColor(this,getResources().getColor(R.color.black));
     }
 
     public void initView(Bundle savedInstanceState) {

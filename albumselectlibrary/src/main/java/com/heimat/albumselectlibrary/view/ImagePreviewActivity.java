@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.heimat.albumselectlibrary.R;
 import com.heimat.albumselectlibrary.model.LocalMedia;
+import com.heimat.albumselectlibrary.utils.StatusColorUtils;
 import com.heimat.albumselectlibrary.widget.PreviewViewPager;
 
 import java.util.ArrayList;
@@ -66,8 +67,8 @@ public class ImagePreviewActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_preview);
-        initView();
         initView(savedInstanceState);
+        StatusColorUtils.setStatusBarColor(this,getResources().getColor(R.color.black));;
     }
 
     public void initView(Bundle savedInstanceState) {

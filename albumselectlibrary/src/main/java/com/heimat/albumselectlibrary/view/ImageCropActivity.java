@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.heimat.albumselectlibrary.R;
 import com.heimat.albumselectlibrary.utils.CropUtil;
 import com.heimat.albumselectlibrary.utils.FileUtils;
+import com.heimat.albumselectlibrary.utils.StatusColorUtils;
 import com.isseiaoki.simplecropview.CropImageView;
 
 import java.io.File;
@@ -43,6 +44,8 @@ public class ImageCropActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         initView();
+        StatusColorUtils.setStatusBarColor(this,getResources().getColor(R.color.black));
+
     }
 
     private Uri sourceUri;
