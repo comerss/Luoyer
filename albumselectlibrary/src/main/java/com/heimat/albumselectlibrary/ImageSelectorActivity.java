@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ImageSelectorActivity extends AppCompatActivity {
+public abstract class ImageSelectorActivity extends AppCompatActivity {
     public final static int REQUEST_IMAGE = 66;
     public final static int REQUEST_CAMERA = 67;
 
@@ -62,7 +62,7 @@ public class ImageSelectorActivity extends AppCompatActivity {
     private int spanCount = 3;
 
     private Toolbar toolbar;
-    private TextView doneText;
+    public TextView doneText;
 
     private TextView previewText;
 
@@ -89,8 +89,6 @@ public class ImageSelectorActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imageselector);
-        initView(savedInstanceState);
-        initView();
         initView(savedInstanceState);
     }
 
@@ -336,6 +334,8 @@ public class ImageSelectorActivity extends AppCompatActivity {
 
     public void onResult(ArrayList<String> images) {
         setResult(RESULT_OK, new Intent().putStringArrayListExtra(REQUEST_OUTPUT, images));
+        doYou();
         finish();
     }
+    public abstract void doYou();
 }
