@@ -336,8 +336,8 @@ public abstract class ImageSelectorActivity extends AppCompatActivity {
 
     public void onResult(ArrayList<String> images) {
         setResult(RESULT_OK, new Intent().putStringArrayListExtra(REQUEST_OUTPUT, images));
-        doYou();
+        doResult();
         finish();
     }
-    public abstract void doYou();
+    public abstract void doResult();
 }
