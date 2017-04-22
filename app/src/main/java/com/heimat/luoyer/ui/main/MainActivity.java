@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity {
                         toActivity(HuActivity.class);
                         break;
                     case 1:
-                        toActivity(TopLineActivity.class);
+//                        toActivity(TopLineActivity.class);
                         break;
                     case 2:
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

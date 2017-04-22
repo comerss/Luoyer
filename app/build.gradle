@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "heimat.com.luoyer"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -52,5 +52,5 @@ dependencies {
     //    compile 'org.greenrobot:greendao:3.2.0'
     compile project(':albumselectlibrary')
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-
+    compile 'io.apptik.widget:multislider-uiautomator:1.3'
 }

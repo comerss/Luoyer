@@ -3,13 +3,31 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <instrumentation
+            android:name="android.test.InstrumentationTestRunner"
+            android:targetPackage="com.heimat.luoyer" >
+    </instrumentation>
+    <!--  <instrumentation
+12         android:name="android.test.InstrumentationTestRunner"
+13         android:targetPackage="com.example.m05_sharedpreferencestest" >
+14     </instrumentation>
+15
+16     <application
+17         android:allowBackup="true"
+18         android:icon="@drawable/ic_launcher"
+19         android:label="@string/app_name"
+20         android:theme="@style/AppTheme" >
+21         <uses-library android:name="android.test.runner" />-->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/af5"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:name=".base.GlobalApplication"
+
         android:theme="@style/AppTheme.NoActionBar">
+        <uses-library android:name="android.test.runner" />
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package heimat.com.luoyer.utils;
+package com.heimat.luoyer.utils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
