@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
-public class ExampleUnitTest extends UiAutomatorTestCase {
+public class Test extends UiAutomatorTestCase {
     public void testDemo() throws IOException, UiObjectNotFoundException {
 
         // 启应用

@@ -19,12 +19,6 @@ public class ImageUtils {
 
     public ImageUtils() {
     }
-    /**
-     * 这是一个保存bitmap为一个文件的方法
-     *
-     * @param bitmap
-     * @return
-     */
     public static File saveBitmapFile(Bitmap bitmap) {
         File file = new File("/mnt/sdcard/" + System.currentTimeMillis()
                 + ".jpg");// 将要保存图片的路径
@@ -38,9 +32,36 @@ public class ImageUtils {
             e.printStackTrace();
         }
         return file;
+    } public static File saveBitmapFile(Bitmap bitmap,String path) {
+        File file = new File(path);// 将要保存图片的路径
+        try {
+            BufferedOutputStream bos = new BufferedOutputStream(
+                    new FileOutputStream(file));
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+            bos.flush();
+            bos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
     }
+    public static void saveImage(String bitmap,String path) {
+       Bitmap bitmap1= getSmallBitmap(bitmap);
+        saveBitmapFile(bitmap1,path);
+    }
+    public static Bitmap getSmallBitmap(String filePath) {
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(filePath, options);
 
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, 480, 800);
 
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+
+        return BitmapFactory.decodeFile(filePath, options);
+    }
     public static Bitmap decodeScaleImage(String path, int width, int height) {
         BitmapFactory.Options options = getBitmapOptions(path);
         int var4 = calculateInSampleSize(options, width, height);

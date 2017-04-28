@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.compat.BuildConfig;
 
+import com.heimat.luoyer.http.Constant;
+import com.heimat.luoyer.utils.FileUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -20,6 +22,7 @@ public class GlobalApplication extends Application {
         mContext=this;
         ButterKnife.setDebug(BuildConfig.DEBUG);
         initImageLoader();
+        FileUtils.createFilePath(Constant.FILEROOT);
     }
     public static Context getContext() {
         return mContext;
@@ -34,5 +37,4 @@ public class GlobalApplication extends Application {
         }
         ImageLoader.getInstance().init(config.build());
     }
-
 }

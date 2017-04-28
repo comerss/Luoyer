@@ -13,7 +13,10 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.heimat.albumselectlibrary.ImageSelectorActivity;
 import com.heimat.luoyer.R;
 import com.heimat.luoyer.base.BaseActivity;
+import com.heimat.luoyer.http.Constant;
+import com.heimat.luoyer.ui.images.TakePictureActivity;
 import com.heimat.luoyer.ui.zhihu.HuActivity;
+import com.heimat.luoyer.utils.FileUtils;
 
 import java.util.ArrayList;
 
@@ -61,7 +64,7 @@ public class MainActivity extends BaseActivity {
                     case 2:
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                             if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED) {
-                                toActivity(ImageSelectorActivity.class);
+                                toActivity(TakePictureActivity.class);
                             } else {
                                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},104);
                             }
@@ -92,5 +95,11 @@ public class MainActivity extends BaseActivity {
                 toActivity(ImageSelectorActivity.class);
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FileUtils.deleteDir(Constant.FILEROOT);
     }
 }

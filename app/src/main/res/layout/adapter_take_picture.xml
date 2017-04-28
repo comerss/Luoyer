@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="wrap_content">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="600px"
+        android:layout_margin="50px"
+        android:background="@drawable/radio_rectangle_gray"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/mImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/ic_camera"/>
+
+        <TextView
+            android:id="@+id/isHaveTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/radio_ractangle_red"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:text="必填"
+            android:textColor="@color/white"
+            android:textSize="38px"
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/txDescp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:text="6666"
+        android:textSize="45px"
+        android:textColor="@color/color_editText"
+        />
+</LinearLayout>
