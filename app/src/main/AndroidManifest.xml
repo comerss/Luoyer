@@ -10,7 +10,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:name=".base.GlobalApplication"
-
         android:theme="@style/AppTheme.NoActionBar">
         <uses-library android:name="android.test.runner" />
         <activity android:name=".ui.main.MainActivity">

@@ -6,21 +6,19 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 
+import com.heimat.luoyer.http.Constant;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-/**
- * Created by yukuoyuan on 2017/3/27.
- */
 
 public class ImageUtils {
 
     public ImageUtils() {
     }
     public static File saveBitmapFile(Bitmap bitmap) {
-        File file = new File("/mnt/sdcard/" + System.currentTimeMillis()
+        File file = new File(Constant.FILEROOT + System.currentTimeMillis()
                 + ".jpg");// 将要保存图片的路径
         try {
             BufferedOutputStream bos = new BufferedOutputStream(

@@ -325,19 +325,20 @@ public abstract class ImageSelectorActivity extends AppCompatActivity {
         for (LocalMedia media : medias) {
             images.add(media.getPath());
         }
+        doResult(images);
         onResult(images);
     }
 
     public void onSelectDone(String path) {
         ArrayList<String> images = new ArrayList<>();
         images.add(path);
+        doResult(images);
         onResult(images);
     }
 
     public void onResult(ArrayList<String> images) {
         setResult(RESULT_OK, new Intent().putStringArrayListExtra(REQUEST_OUTPUT, images));
-        doResult();
         finish();
     }
-    public abstract void doResult();
+    public abstract void doResult(ArrayList<String> images);
 }
