@@ -21,6 +21,7 @@ public class SelectPictureActivity extends ImageSelectorActivity {
             mImageManager= (ImageManager) getIntent().getExtras().getSerializable("ImageManager");
     }
 
+
     @Override
     public void doResult(ArrayList<String> images) {
         mImageManager.LocalPath=images.get(0);

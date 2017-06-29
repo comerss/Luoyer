@@ -9,4 +9,5 @@ public class GetRequest<T extends BaseBean> extends Request<T> {
     public GetRequest( String url, Class<T> clazz) {
         super(0, url, clazz);
     }
+
 }
