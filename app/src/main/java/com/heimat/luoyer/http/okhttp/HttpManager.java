@@ -14,6 +14,6 @@ public class HttpManager {
         return new PostRequest<NetData>(Constant.GET_DATA,NetData.class,hashMap);
     }
     public static Request<NetData> getList(Map<String,Object> hashMap){
-        return new GetRequest<>(Constant.GET_DATA,NetData.class);
+        return new GetRequest<NetData>(Constant.GET_DATA,NetData.class);
     }
 }

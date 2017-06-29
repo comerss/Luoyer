@@ -9,8 +9,8 @@
         android:supportsRtl="true"
         >
         <activity android:name=".view.ImageCropActivity"/>
-        <activity android:name=".ImageSelectorActivity"/>
         <activity android:name=".view.ImagePreviewActivity"/>
+        <activity android:name=".ImageSelectorActivity"/>
     </application>
 
 </manifest>
