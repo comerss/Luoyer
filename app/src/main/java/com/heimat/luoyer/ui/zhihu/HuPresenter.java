@@ -13,6 +13,7 @@ public class HuPresenter extends BasePresenter<HuInterfaces.HuView> implements H
 
     @Override
     public void getData() {
+
     }
 
     @Override

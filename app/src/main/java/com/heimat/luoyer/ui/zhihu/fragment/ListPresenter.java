@@ -35,5 +35,16 @@ public class ListPresenter extends RxPresenter<HuInterfaces.HuListView> {
                 ToastUtils.showToast(message);
             }
         });
+        addSubscription(mApiService.getNews("999",99), new RxSubscriber<ResultResponse<List<News>>>(mContext, b) {
+            @Override
+            protected void _onNext(ResultResponse<List<News>> listResultResponse) {
+                mView.showList(listResultResponse);
+            }
+
+            @Override
+            protected void _onError(String message) {
+
+            }
+        });
     }
 }
